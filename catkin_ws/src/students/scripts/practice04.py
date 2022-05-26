@@ -101,7 +101,7 @@ def follow_path(path):
     # Send zero speeds (otherwise, robot will keep moving after reaching last point)
     pub_cmd_vel.publish(Twist())
     # Publish a 'True' using the pub_goal_reached publisher
-    #
+    pub_goal_reached.publish(True)
     return
     
 def callback_global_goal(msg):

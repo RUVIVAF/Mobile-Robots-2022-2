@@ -275,7 +275,7 @@ def main():
             say("Finding object")
             x_obj, y_obj, z_obj = find_object(obj)
             print(x_obj, y_obj, z_obj)
-            current_state == "SM_POINT_TRANSFORM"
+            current_state = "SM_POINT_TRANSFORM"
 
         elif current_state == "SM_POINT_TRANSFORM":
             if obj == "pringles":
@@ -292,7 +292,7 @@ def main():
             else:
                 q = ik_right_arm(xt,yt,zt)
             print(q)
-            current_state == "SM_MOVE_ARM_TO_START"
+            current_state = "SM_MOVE_ARM_TO_START"
 
         elif current_state == "SM_MOVE_ARM_TO_START":
              print("Moving the robot's arm")
@@ -314,7 +314,7 @@ def main():
                 move_left_gripper(q)
             else:
                 move_right_gripper(q)
-            current_state == "SM_FINISH"
+            current_state = "SM_FINISH"
         loop.sleep()
  
 if __name__ == '__main__':
